@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.notification{
+    background-color: rgba(32, 206, 32, 0.651);
+    text-align: center;
+    height: 32px;
+    line-height: 28px;
+    border: 2px solid green;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
+.alert{
+    background-color: rgba(206, 32, 32, 0.651);
+    text-align: center;
+    height: 72px;
+    line-height: 34px;
+    border: 2px solid rgb(173, 0, 0);
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}

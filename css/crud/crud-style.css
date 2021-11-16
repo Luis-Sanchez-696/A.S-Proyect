@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: lightgrey;
+}
+.crud{
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    margin-top: 48px;
+}
+.crud tr{
+    border: 1px solid black;
+    text-align: center;
+    height: 32px;
+    background-color: white;
+    color: black;
+}
+.crud-head tr{
+    background-color: mediumblue;
+    color: white;
+}
+.crud td{
+    border: 1px solid black;
+    text-align: center;
+    width: 180px;
+}
+.crud-foot tr{
+    background-color: mediumblue;
+    color: white;
+}

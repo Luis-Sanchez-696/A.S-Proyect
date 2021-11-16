@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,100&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(../Images/Fondo-Login.jpg);
+    background-size: cover;
+}
+.login{
+    width: 400px;
+    height: 250px;
+    border: 1px solid transparent;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0.116);
+    margin: auto;
+    text-align: center;
+    position: relative;
+    top: 200px;
+    box-shadow: black 0 0 100px 5px;
+    backdrop-filter: blur(5px);
+}
+.form1{
+    display: block;
+    width: 191px;
+    margin-left: auto;
+    margin-right: 88px;
+    padding: 8px;
+    margin-top: 34px;
+    border: 1px solid black;
+    border-radius: 0px 12px 12px 0px;
+    text-align: center;
+}
+.validar{
+    font-family: 'Lato', sans-serif;
+    font-size: 40px;
+    color: #00a3bc;
+    border-color:1px solid #00a3bc9d;
+    text-shadow:#00a3bc 0px 0px 25px ;
+}
+.username{
+    margin-top: 20px;
+}
+.submitlogin{
+    width: 80px;
+    border-radius: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #00a3bcb9;
+}
+.form1:hover{
+    box-shadow: #00a3bcbb 0 0 20px;
+}
+.submitlogin:hover{
+    width: 85px;
+    height: 35px;
+}
+.username:focus{
+    border-color: #00a3bc;
+    border-radius: 0px;
+}
+.password:focus{
+    border-color: #00a3bc;
+    border-radius: 0px;
+}
+.validar::selection{
+    color: red;
+    text-shadow: #e62020 0 0 25px;
+}
+.login-icon{
+    float: left;
+    background-color: #00a3bc;
+    border-radius: 12px 0px 0px 12px;
+    height: 33px;
+    position: relative;
+    left: 88px;
+    bottom: 33px;
+    border: 1px solid black;
+}

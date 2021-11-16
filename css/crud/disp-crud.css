@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,100&display=swap');
+.edit{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: rgb(0, 120, 175);
+    border: 2px solid midnightblue;
+    border-radius: 6px;
+    width: 30px;
+    height: 30px;
+    line-height: 26px;
+}
+.edit:hover{
+    background-color: turquoise;
+    color: black;
+}
+.delete{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: rgb(253, 0, 0);
+    border: 2px solid rgb(160, 0, 0);
+    border-radius: 6px;
+    width: 30px;
+    height: 30px;
+    line-height: 26px;
+}
+.delete:hover{
+    background-color: rgb(255, 83, 83);
+}
+.create{
+    display: block;
+    background-color: limegreen;
+    border: 2px solid green;
+    color: white;
+    width: 132px;
+    height: 34px;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: 12px;
+    float: right;
+    text-decoration: none;
+    text-align: center;
+    line-height: 28px;
+    margin-top: 6px;
+}
+.create:hover{
+    box-shadow: limegreen 0px 0px 12px 3px;
+    background-color: lime;
+}
+.crud-action{
+    line-height: 26px;
+}
+.delete-alert{
+    display: none;
+}
+.modal-window{
+    background-color: white;
+    height: 210px;
+    text-align: center;
+    width: 480px;
+    z-index: 10;
+    border: 4px solid mediumblue;
+    border-radius: 8px;
+    position: fixed;
+    left: calc(50% - 240px - 4px);
+    top: 62px;
+    transition: .6s;
+    visibility: hidden;
+    transform: translateY(-600px);
+}
+.modal-window-content h2{
+    margin-top: 18px;
+    font-family: 'Lato', sans-serif;
+    font-size: 28px;
+    text-align: justify;
+    margin-left: 28px;
+    text-decoration: black underline;
+}
+.modal-window-content p{
+    margin-top: 38px;
+    margin-bottom: 52px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+.modal-window-option{
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    width: 120px;
+    height: 32px;
+    border: 2px solid black;
+    line-height: 28px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 28px;
+    border-radius: 4px;
+}
+.options-container{
+    margin-right: -150px;
+    margin-top: -4px;
+}
+label.modal-window-option{
+    background-color: blue;
+    color: white;
+}
+label.modal-window-option:hover{
+    background-color: lightskyblue;
+    box-shadow: midnightblue 0px 0px 8px 1px;
+    color: black;
+}
+a.modal-window-option{
+    background-color: limegreen;
+    color: white;
+}
+a.modal-window-option:hover{
+    background-color: lime;
+    box-shadow: green 0px 0px 8px 1px;
+    color: black;
+}
+.delete-alert:checked ~ .modal-window{
+    transition: .6s;
+    visibility: visible;
+    transform: translateY(0px);
+}
