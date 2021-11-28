@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+
+#show-modal{
+    font-size: 12px;
+    color: seashell;
+    background-color: rgba(6, 57, 197, 0.89);
+   padding: 8px 3px 8px 3px;
+    text-decoration: none;
+    transition: all 0.15s linear;
+    border-radius: 5px;
+}
+#show-modal:hover{
+    cursor: pointer;
+    background:rgb(13, 133, 212);
+    transition: 0.5s ease;
+}
+.modal{
+    position: relative;
+    left: 5cm;
+    bottom: 50px;
+    z-index: 99999999;
+    background: rgba(179, 4, 4, 0.75);
+    width:300px ;
+    height: 0px;
+    opacity: 0;
+    transition: opacity o.35s ease;
+    z-index: 1;
+}
+.modal.content-modal{
+    width: 100%;
+    max-width: 500px;
+    position:relative;
+    left: 50%;
+    top: -100vh;
+    transition: top 0.35 ease;
+    margin-left:-250px;
+    background: white;
+    border-radius: 2px;
+    transform: translateX(-350px);
+}
+.modal article{
+    height:  100vh;
+    width: 1000px;
+    background: #f5f4f4;
+    border: solid 0.5px rgb(79, 79, 80);
+    border-radius: 6px;
+    font-family: 'play', sans-serif;
+    box-shadow: 5px 10px 10px rgb(100, 100, 100);
+}
+.modal h4{
+    position: relative;
+    top: 1cm;
+    text-align: center;
+}
+.title-app{
+    color:rgba(6, 57, 197, 0.89);
+}
+.nombre-app{
+    color: rgb(65, 202, 11);
+}
+
+.close-modal{
+    color:#fcfbfa;
+    position: relative;
+    top: 5A00px;
+    left: 350px;
+    margin: 0;
+    padding: 2px 5px 2px 5px;
+    font-size: 1 cm;
+    text-decoration: none;
+    background: rgb(4, 90, 189);
+    border: solid 1px black;
+    border-radius: 2px;
+}
+
+.modal:target{
+    opacity: 1;
+    
+}
+
+.modal{
+    top:6px;
+    transition:  0.60s ease;
+}
+
+.modal-dos{
+    position: relative;
+    left: 15cm ;
+    z-index: 99999999;
+    background: rgba(179, 4, 4, 0.75);
+    width:300px ;
+    height: 0px;
+    opacity: 0;
+    transition: opacity o.35s ease;
+}
+.modal-dos.content-modal{
+    width: 100%;
+    max-width: 500px;
+    position:fixed;
+    left: 50%;
+    top: -100vh;
+    transition: top 0.35 ease;
+    margin-left:-250px;
+    background: white;
+    border-radius: 2px;
+    z-index: 9999999;
+}
+.modal-dos article{
+    height:  300px;
+    background: #f5f4f4;
+    border: solid 0.5px rgb(79, 79, 80);
+    border-radius: 6px;
+    text-align: center;
+    font-family: 'play', sans-serif;
+    box-shadow: 5px 10px 10px rgb(100, 100, 100);
+}
+.cerrar{
+    color:#fcfbfa;
+    position: absolute;
+    right: 0;
+    margin: 0;
+    padding: 2px 5px 2px 5px;
+    font-size: 1 cm;
+    text-decoration: none;
+    background: rgb(4, 90, 189);
+    border: solid 1px black;
+    border-radius: 2px;
+    opacity: 1;
+    transition: opacity o.35s ease;
+
+}
+.modal-dos:target{
+    opacity: 1;
+    top:160px;
+}
+.modal-dos{
+top:50px;
+transition:  0.60s ease;
+}
+
+.cerrar:hover{
+    background-color: red;
+    transition: 0.5s ease;
+}

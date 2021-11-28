@@ -1,0 +1,80 @@
+*{
+margin: 0;
+padding: 0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,100&display=swap');
+body{
+    background-color: rgb(223, 221, 221);
+    font-family: 'lato', sans-serif;
+}
+main{
+    position: relative;
+    left: 380px;
+    top:10px;
+    border-radius: 5px;
+    width: 600px;
+    height: 100%;
+    background-color: honeydew;
+    box-shadow: black 10px 10px 10px;
+}
+#pc{
+    position: relative;
+    width: 600px;
+    height: 350px;
+    border-radius: 5px;
+}
+h2{
+    text-align: center;
+}
+#num_pc{
+position: relative;
+left: 410px;
+bottom: 25px;
+width: 30px;
+font-size: 20px;
+font-weight: bold;
+text-shadow: rgb(3,182, 77) 0px 0px 10px;
+color: rgb(3, 182, 77);
+}
+.apps-pc{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.apps-pc td{
+padding-left: 15px;
+width: 160px;
+height: 30px;
+}
+.pc td{
+    width: 100px;
+    height: 30px;    
+}
+.elementos-pc{
+    font-weight: bold;
+}
+.mas-info{
+    position: relative;
+    left: 20px;
+    bottom:600px;
+    width: 30px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: rgb(221, 86, 7);
+    box-shadow: 5px 2px 10px rgb(109, 108, 108);
+}
+.mas-info h3{
+    font-size: 20px !important;
+    color: white;
+}
+.mas-info{
+    font-size: 0px;
+    transition: width .5s;
+}
+.mas-info:hover{
+    width: 300px;
+    height: 300px;
+    font-size: 15px ;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(45, 127, 250);
+}
