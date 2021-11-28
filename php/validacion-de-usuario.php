@@ -1,27 +1,4 @@
 <?php
-function validate_name(){
-    global $nombre;
-    global $salida1;
-    global $long_name;
-    for($i=0; $i<$long_name;$i++){
-        if(is_string($nombre[$i])){
-            if($nombre[$i]==" "){
-                $salida1="FALSE";
-            }
-            if(is_numeric($nombre[$i])){
-                $salida1="TRUE";
-            }
-            if(!ctype_alnum($nombre[$i])){
-                $salida1="FALSE";
-            }
-        }
-        else{
-            $salida1="FALSE";
-        }
-    }
-    return $salida1;
-}
-
 include('../php/coneccion.php');
 
 $nombre=$_REQUEST['username'];
@@ -96,7 +73,7 @@ if($salida1=="TRUE" && $salida2=="TRUE"){
 
 if($salida3=="TRUE"){
     
-    $ejecutar= mysqli_query($coneccion, "SELECT * FROM `usuarios` WHERE nombre_usuario='$nombre' AND password_user='$criptPassword'");
+    $ejecutar= mysqli_query($coneccion, "SELECT DISTINCT * FROM `usuarios` WHERE nombre_usuario='$nombre' AND password_user='$criptPassword'");
 
     while ($mostrar=mysqli_fetch_array($ejecutar)){
         $rango= $mostrar['id_rango_f'];
@@ -104,6 +81,7 @@ if($salida3=="TRUE"){
         $contra= $mostar['password_user'];
         $real_name=$mostrar['nombre'];
         $apellido=$mostrar['apellido'];
+        $disponibilidad=$mostrar['disponibilidad'];
     }
 
     if($rango==2){
@@ -113,6 +91,7 @@ if($salida3=="TRUE"){
         $_SESSION['permiso']=$rango;
         $_SESSION['realName']=$real_name;
         $_SESSION['apellido']=$apellido;
+        $_SESSION['disponibilidad']=$disponibilidad;
         header('Location:../php/admin-page.php');
         die();
     }
@@ -123,6 +102,7 @@ if($salida3=="TRUE"){
         $_SESSION['permiso']=$rango;
         $_SESSION['realName']=$real_name;
         $_SESSION['apellido']=$apellido;
+        $_SESSION['disponibilidad']=$disponibilidad;
         header('Location: ../php/user-page.php');
         die();
     }

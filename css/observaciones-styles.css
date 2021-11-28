@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: lightgray;
+}
+.form-container{
+    width: 700px;
+    height: 400px;
+    border: 4px solid midnightblue;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: calc(50vh - 200px);
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: gray 0px 0px 18px 2px inset;
+}
+h1{
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 21px;
+}
+.form-observaciones{
+    margin-top: 32px;
+}
+.observaciones, .obs-submit{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.observaciones{
+    min-width: 500px;
+    max-width: 500px;
+    min-height: 200px;
+    max-height: 200px;
+    padding-left: 12px;
+    padding-top: 4px;
+    padding-right: 12px;
+    padding-bottom: 4px;
+}
+.obs-submit{
+    margin-top: 38px;
+    width: 180px;
+    height: 32px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    background-color: lime;
+    border: 2px solid green;
+    transition: .2s;
+}
+.obs-submit:hover{
+    transition: .2s;
+    transform: scale(1.1);
+}
+.error-deuda-message{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    background-color: crimson;
+    border: 2px solid rgb(119, 0, 0);
+    min-height: 32px;
+    line-height: 28px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 52px;
+    color: white;
+}

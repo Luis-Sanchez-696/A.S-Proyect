@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: lightgray ;
+}
+.card{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 52px;
+    margin-bottom: 52px;
+    background-color: white;
+    width: 1000px;
+    min-height: 1000px;
+    max-height: 1800px;
+    border-radius: 8px;
+    box-shadow: black 12px 12px 18px 4px;
+}
+.contenido{
+    padding: 40px;
+}
+.device-description-image{
+    width: 800px;
+    height: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 21px;
+    border: 2px solid black;
+    border-radius: 8px;
+    box-shadow: grey 0px 0px 21px 2px inset;
+    background-color: whitesmoke;
+    padding: 21px;
+}
+h1{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 28px;
+    font-family: 'Montserrat', sans-serif;
+}
+.identificador{
+    color: midnightblue;
+    display: inline-block;
+}
+.list{
+    margin-left: 74px;
+    margin-top: 18px;
+    font-family: 'Roboto', sans-serif;
+}
+.list li{
+    margin-top: 21px;
+    margin-left: 18px;
+}
+.list li u{
+    text-decoration: none;
+    font-weight: 700;
+}
+.table-container{
+    margin-top:  28px;
+    min-height: calc(32px * 2);
+    max-height: calc(32px * 6);
+    overflow-y: scroll;
+    margin-left: calc(460px - 500px + 200px - 30px);
+    margin-right: 212px;
+    
+}
+.sw-table{
+    border-collapse: collapse;
+}
+.sw-table .sw-table-head{
+    position: sticky;
+    top: -1px;
+}
+.sw-table .sw-table-foot{
+    position: sticky;
+    bottom: -1px;
+}
+.sw-table::-webkit-scrollbar{
+    width: 18px;
+}
+.sw-table::-webkit-scrollbar-track{
+    background-color: black;
+    border: 7px solid midnightblue;
+}
+.sw-table::-webkit-scrollbar-thumb{
+    background-color: #00a3bc;
+    border-left: 3px solid midnightblue;
+    border-right: 3px solid midnightblue;
+    border-radius: 8px;
+}
+.sw-table::-webkit-scrollbar-thumb:hover{
+    background-color: turquoise;
+}
+.sw-table tr{
+    border: 1px solid black;
+    text-align: center;
+    height: 41px;
+}
+.sw-table td{
+    width: 180px;
+    border: 1px solid black;
+}
+.sw-table td:last-child{
+    width: 110px;
+}
+.sw-table-head{
+    background-color: mediumblue;
+    color: white;
+}
+.sw-table-head tr{
+    height: 32px;
+}
+.sw-table-body{
+    background-color: white;
+    color: black;
+}
+.sw-table-foot{
+    background-color: mediumblue;
+    color: white;
+}
+.sw-table-foot tr{
+    height: 36px;
+}
+.actions-container{
+    display: flex;
+    gap: 52px;
+}
+.action{
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    width: 140px;
+    height: 32px;
+    border-radius: 6px;
+    gap: 21px;
+    text-align: center;
+    line-height: 32px;
+    margin-top: 64px;
+}
+.volver{
+    background-color: mediumblue;
+    margin-left: calc(480px - 74px - 18px - 140px - 52px);
+    transition:  .2s;
+}
+.volver:hover{
+    color: black;
+    background-color: turquoise;
+    font-weight: 600;
+    border: 2px solid mediumblue;
+    line-height: 28px;
+    transition: .2s;
+}
+.agregar{
+    background-color: green;
+    transition: .2s;
+}
+.agregar:hover{
+    color: black;
+    background-color: lime;
+    font-weight: 600;
+    border: 2px solid green;
+    line-height: 28px;
+    transition: .2s;
+}
+.delete-sw{
+    display: block;
+    width: 42px;
+    height: 30px;
+    background-color: red;
+    line-height: 32px;
+    border-radius: 6px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: .2s;
+    border: 2px solid rgb(119, 0, 0);
+}
+.delete-sw:hover{
+    background-color: tomato;
+    transition: .2s;
+}
+.delete-sw-action{
+    height: 26px;
+    line-height: 26px;
+}
+.nuevo-sw{
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    background-color: mediumblue;
+    border-radius: 6px;
+    height: 26px;
+    width: 118px;
+    line-height: 22px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid cyan;
+    transition: .2s;
+}
+.nuevo-sw:hover{
+    background-color: cyan;
+    border: 2px solid teal;
+    color: black;
+    font-weight: 600;
+    transition: .2s;
+}

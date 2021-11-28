@@ -340,12 +340,3 @@ u.bold{
     box-shadow: midnightblue 0px 0px 6px 2px;
     transition: .2s;
 }
-/*---Estilos de un fondo temporal (debe eliminarse)---*/
-.fondo{
-    display: block;
-    width: 800px;
-    height: 600px;
-    margin: auto;
-    margin-top: 60px;
-}
-/*----------------------------------------------------*/

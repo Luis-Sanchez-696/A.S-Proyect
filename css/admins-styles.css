@@ -1,82 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,100&display=swap');
-.edit{
-    display: inline-block;
-    text-decoration: none;
-    color: white;
-    background-color: rgb(0, 120, 175);
-    border: 2px solid midnightblue;
-    border-radius: 6px;
-    width: 30px;
-    height: 30px;
-    line-height: 26px;
-    cursor: pointer;
-    transition: .1s;
+.table-container{
+    min-height: calc(32px * 2);
+    max-height: calc(32px * 16);
+    margin-top: 48px;
+    overflow-y: scroll;
 }
-.edit:hover{
-    background-color: lightskyblue;
-    transition: .1s;
-}
-.delete{
-    display: inline-block;
-    text-decoration: none;
-    color: white;
-    background-color: rgb(253, 0, 0);
-    border: 2px solid rgb(160, 0, 0);
-    border-radius: 6px;
-    width: 30px;
-    height: 30px;
-    line-height: 28px;
-    cursor: pointer;
-    transition: .1s;
-}
-.delete:hover{
-    background-color: rgb(255, 83, 83);
-    transition: .1s;
-}
-.perfil{
-    display: inline-block;
-    text-decoration: none;
-    color: white;
-    background-color: rgb(98, 0, 209);
-    border: 2px solid rgb(54, 0, 104);
-    border-radius: 6px;
-    width: 30px;
-    height: 30px;
-    line-height: 26px;
-    cursor: pointer;
-    transition: .1s;
-}
-.perfil:hover{
-    background-color: rgb(164, 67, 255) ;
-    transition: .1s;
-}
-.create{
-    display: block;
-    background-color: limegreen;
-    border: 2px solid green;
-    color: white;
-    width: 132px;
-    height: 34px;
-    border-radius: 8px;
-    margin-left: auto;
-    margin-right: 12px;
-    float: right;
-    text-decoration: none;
+.admins-table{
+    border-collapse: collapse;
     text-align: center;
-    line-height: 28px;
-    margin-top: 6px;
+    font-family: 'Roboto', sans-serif;
 }
-.create:hover{
-    box-shadow: limegreen 0px 0px 12px 3px;
-    background-color: lime;
+.admins-table tr{
+    border: 1px solid black;
+    height: 38px;
 }
-.crud-action{
-    line-height: 26px;
-    height: 26px;
+.admins-table td{
+    border: 1px solid black;
+    width: 200px;
 }
-.delete-alert{
-    display: none;
+.admins-table td.acciones{
+    width: 110px;
+}
+.admins-table thead tr{
+    background-color: mediumblue;
+    color: white;
+    position: sticky;
+    top: -1px;
+}
+.admins-table tfoot tr{
+    background-color: mediumblue;
+    color: white;
+    position: sticky;
+    bottom: -1px;
+}
+.baja-admin{
+    display: block;
+    background-color: red;
+    border: 2px solid rgb(139, 0, 0);
+    height: 28px;
+    width: 42px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: .2s;
+    border-radius: 4px;
+}
+.baja-admin:hover{
+    background-color: tomato;
+    transition: .2s;
 }
 .modal-window{
     background-color: white;
@@ -146,4 +117,27 @@ a.modal-window-option:hover{
     transition: .6s;
     visibility: visible;
     transform: translateY(0px);
+}
+.disable-confirm-message{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    background-color: limegreen;
+    border: 2px solid green;
+    height: 32px;
+    line-height: 28px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 21px;
+}
+.disable-error-message{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    background-color: crimson;
+    border: 2px solid rgb(119, 0, 0);
+    min-height: 32px;
+    line-height: 28px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 21px;
+    color: white;
 }

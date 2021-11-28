@@ -1,27 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    background-color: lightgrey;
+.main-container{
+    min-height: calc(41px * 2);
+    max-height: calc(41px * 12);
+    overflow-y: scroll;
+    margin-top: 48px;
+}
+.crud thead tr{
+    position:  sticky;
+    top: -1px;
+}
+.crud tfoot tr{
+    position: sticky;
+    bottom: -1px;
 }
 .crud{
     margin-left: auto;
     margin-right: auto;
     border-collapse: collapse;
-    margin-top: 48px;
+    font-family: 'Roboto', sans-serif;
 }
 .crud tr{
     border: 1px solid black;
     text-align: center;
-    height: 32px;
+    height: 41px;
     background-color: white;
     color: black;
 }
 .crud-head tr{
     background-color: mediumblue;
     color: white;
+    height: 38px;
 }
 .crud td{
     border: 1px solid black;
@@ -31,4 +44,5 @@ body{
 .crud-foot tr{
     background-color: mediumblue;
     color: white;
+    height: 38px;
 }
