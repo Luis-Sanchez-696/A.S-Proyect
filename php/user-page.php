@@ -12,6 +12,7 @@
     <?php
         session_start();
         if(isset($_SESSION['nombre']) && $_SESSION['permiso']==1){
+            if($_SESSION['disponibilidad']==1){
             include('user-header.php');
     ?>
     <main>
@@ -66,6 +67,7 @@
     </aside>
     <?php 
     include('footer.php');
+        }
         }
         else{
             header('Location: ../php/error.php');

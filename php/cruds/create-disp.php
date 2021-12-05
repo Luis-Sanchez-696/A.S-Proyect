@@ -14,6 +14,7 @@
     <?php
         session_start();
         if(isset($_SESSION['nombre']) && $_SESSION['permiso']==2){
+            if($_SESSION['disponibilidad']){
     ?>
         <main>
             <div class="form-container">
@@ -26,15 +27,15 @@
                     <p class="option">&#164 Notebook:</p> <input type="radio" name="id_tipo_pc_f" value=1 class="input-radius" required>
                     <p class="option">&#164 Netbook:</p> <input type="radio" name="id_tipo_pc_f" value=2 class="input-radius" required>
                     </div>
-                    <p>Accesorios:</p>
-                    <div class="input-container">
-                    <p class="option">&#164 SI:</p> <input type="radio" name="cargador" value=1 class="input-radius" required>
-                    <p class="option">&#164 NO:</p><input type="radio" name="cargador" value=0 class="input-radius" required>
-                    </div>
                     <p>Internet:</p>
                     <div class="input-container">
                     <p class="option">&#164 SI:</p> <input type="radio" name="conexion_internet" value=1 class="input-radius" required>
                     <p class="option">&#164 NO:</p><input type="radio" name="conexion_internet" value=0 class="input-radius" required>
+                    </div>
+                    <p>Cargador:</p>
+                    <div class="input-container">
+                    <p class="option">&#164 SI:</p> <input type="radio" name="cargador" value=1 class="input-radius" required>
+                    <p class="option">&#164 NO:</p><input type="radio" name="cargador" value=0 class="input-radius" required>
                     </div>
                     <p>Cámara:</p>
                     <div class="input-container">
@@ -65,28 +66,71 @@
                     $camara=$_REQUEST['camara'];
                     $id_estado_f=$_REQUEST['id_estado_f'];
                     $condicion=$_REQUEST['condicion'];
-                    /*
-                    Validación completa de todas las entradas del formulario:
-                        ... 
-                        ... 
-                        ... 
-                    */
-                    $create=$dispositivo->create($num_computadora, $id_tipo_pc_f, $id_estado_f, $cargador, $conexion_internet, $camara, $condicion);
-                    if($create){
-                        $mensaje="<div class='notification'>Operación realizada con éxito.</div>";
+                    
+                    //-------------Validación del Numero de Computadora--------------------
+                        $num_long=strlen($num_computadora);
+                        $salida1="FALSE";
+                        for($i=0; $i<$num_long; $i++){
+                            if(is_numeric($num_computadora[$i])){
+                                $salida1="TRUE";
+                            }
+                            else{
+                                $salida1="FALSE";
+                                break;
+                            }
+                        }
+                    //---------------------------------------------------------------------
+
+                    //--------------Validación del TextArea--------------------------------
+                        $salida2="FALSE";
+                        $long_text=strlen($condicion);
+                        for($i=0; $i<$long_text; $i++){
+                            if(is_string($condicion[$i])){
+                                if(ctype_alnum($condicion[$i])){
+                                    $salida2="TRUE";
+                                }
+                                else{
+                                    if($condicion[$i]==' '){
+                                        $salida2="TRUE";
+                                    }
+                                    else{
+                                        $salida2="FALSE";
+                                        break;
+                                    }
+                                }
+                            }
+                            else{
+                                $salida2="FALSE";
+                                break;
+                            }
+                        }
+                    //---------------------------------------------------------------------
+
+                    if($salida1=="TRUE" && $salida2=="TRUE"){
+                        $create=$dispositivo->create($num_computadora, $id_tipo_pc_f, $id_estado_f, $cargador, $conexion_internet, $camara, $condicion);
+                        if($create){
+                            $mensaje="<div class='notification'>Carga del nuevo dispositivo realizada con éxito.</div>";
+                        }
+                        else{
+                            $mensaje="<div class='alert'>Lo sentimos, pero la operación que intentó realizar no pudo ser procesada.<br>
+                            Por favor, vuelva a intentarlo y aseguresé de que los datos que ingresó son correctos, y no contienen simbolos o caracteres especiales.
+                            </div>";
+                        }
+                        echo $mensaje;
                     }
                     else{
                         $mensaje="<div class='alert'>Lo sentimos, pero la operación que intentó realizar no pudo ser procesada.<br>
                         Por favor, vuelva a intentarlo y aseguresé de que los datos que ingresó son correctos, y no contienen simbolos o caracteres especiales.
                         </div>";
+                        echo $mensaje;
                     }
-                    echo $mensaje;
                 }
             ?>
         </main>
     <?php
         }
+        }
     ?>
-    
+    <script src="../../js/evitar-reenvios.js"></script>
 </body>
 </html>

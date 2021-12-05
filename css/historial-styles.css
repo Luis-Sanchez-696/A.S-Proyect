@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,100&display=swap');
+.historial-table{
+    border-collapse: collapse;
+    font-family: 'Roboto', sans-serif;
+}
+.historial-table tr{
+    border: 1px solid black;
+    text-align: center;
+    height: 36px;
+}
+.historial-table td{
+    border: 1px solid black;
+    text-align: center;
+    width: 190px;
+}
+tfoot tr{
+    background-color: mediumblue;
+}
+thead tr{
+    background-color: mediumblue;
+    color: white;
+}
+/*---------------Estilos de la seccion No Devueltos-----------------*/
+.table-container{
+    width: calc(190px * 5);
+    margin-top: 21px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: calc(32px * 2);
+    max-height: calc(32px * 15);
+    overflow-y: scroll;
+    box-shadow: black 0px 0px 18px 4px;
+}
+.historial-table thead tr{
+    position: sticky;
+    top: -1px;
+}
+.historial-table tfoot tr{
+    position: sticky;
+    bottom: -1px;
+}
+.table-title{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+.table-container-two{
+    width: calc(190px * 3 + 110px);
+    margin-top: 21px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: calc(36px * 2);
+    max-height: calc(36px * 15);
+    overflow-y: scroll;
+    box-shadow: black 0px 0px 18px 4px;
+}
+.historial-table td.acciones{
+    width: 110px;
+}
+.clean-register{
+    display: block;
+    background-color: orange;
+    line-height: 32px;
+    width: 48px;
+    height: 28px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 6px;
+    border: 2px solid orangered;
+    transition: .1s;
+}
+.clean-register-action{
+    margin-top: -3px;
+    height: 24px;
+    transform: rotate(45deg);
+}
+.clean-register:hover{
+    background-color: yellow;
+    transition: .1s;
+}
+.delete-alert{
+    display: none;
+}
+.modal-window{
+    background-color: white;
+    height: 210px;
+    text-align: center;
+    width: 480px;
+    z-index: 10;
+    border: 4px solid mediumblue;
+    border-radius: 8px;
+    position: fixed;
+    left: calc(50% - 240px - 4px);
+    top: 62px;
+    transition: .6s;
+    visibility: hidden;
+    transform: translateY(-600px);
+}
+.modal-window-content h2{
+    margin-top: 18px;
+    font-family: 'Lato', sans-serif;
+    font-size: 28px;
+    text-align: justify;
+    margin-left: 28px;
+    text-decoration: black underline;
+}
+.modal-window-content p{
+    margin-top: 38px;
+    margin-bottom: 52px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+.modal-window-option{
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    width: 120px;
+    height: 32px;
+    border: 2px solid black;
+    line-height: 28px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 28px;
+    border-radius: 4px;
+}
+.options-container{
+    margin-right: -150px;
+    margin-top: -4px;
+}
+.modal-window-option.cancel{
+    background-color: blue;
+    color: white;
+}
+.modal-window-option.cancel:hover{
+    background-color: lightskyblue;
+    box-shadow: midnightblue 0px 0px 8px 1px;
+    color: black;
+}
+a.modal-window-option{
+    background-color: limegreen;
+    color: white;
+}
+a.modal-window-option:hover{
+    background-color: lime;
+    box-shadow: green 0px 0px 8px 1px;
+    color: black;
+}
+.delete-alert:checked ~ .modal-window{
+    transition: .6s;
+    visibility: visible;
+    transform: translateY(0px);
+}
+.clean-deuda-message{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    background-color: limegreen;
+    border: 2px solid green;
+    height: 32px;
+    line-height: 28px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 52px;
+}
+.error-deuda-message{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    background-color: crimson;
+    border: 2px solid rgb(119, 0, 0);
+    min-height: 32px;
+    line-height: 28px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 52px;
+    color: white;
+}

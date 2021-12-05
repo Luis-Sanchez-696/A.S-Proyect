@@ -14,6 +14,7 @@
     <?php
         session_start();
         if(isset($_SESSION['nombre']) && $_SESSION['permiso']==2){
+            if($_SESSION['disponibilidad']==1){
             include('admin-header.php');
     ?>
     <main>
@@ -74,9 +75,9 @@
                             <td><?php echo $condicion?></td>
                             <td><?php echo $estado?></td>
                             <td>
+                                <a title="Ver Detalles" class="perfil" href="../php/cruds/perfil-computadora.php?id=<?php echo $id_computadora?>"><img class="crud-action" src="../icons/info_white_24dp.svg" alt="perfil-pc"></a>
                                 <a title="Editar Registro" class="edit" href="../php/cruds/edit-disp.php?id=<?php echo $id_computadora?>"><img class="crud-action" src="../icons/edit_white_24dp.svg" alt="edit"></a>
-                                <a title="Eliminar Registro" class="delete" href="registro-admin.php?id=<?php echo $id_computadora?>"><img class="crud-action" src="../icons/delete_white_24dp.svg" alt="delete"></a>
-                            </td>
+                                <a title="Eliminar Registro" class="delete" href="registro-admin.php?id=<?php echo $id_computadora?>"><img class="crud-action" src="../icons/delete_white_24dp.svg" alt="delete"></a>                            </td>
                         </tr>
                     <?php
                         }
@@ -90,7 +91,7 @@
                             <h2>Campus Virtual pregunta:</h2>
                             <p>¿Está seguro que desea eliminar este Dispositivo?</p>
                             <div class="options-container">
-                                <label class="modal-window-option" title="Cacelar Operación" for="delete-alert">Cancelar</label>
+                                <a class="modal-window-option cancel" title="Cancelar Operación" href="../php/registro-admin.php">Cancelar</label>
                                 <a class="modal-window-option" title="Eliminar Registro" href="../php/cruds/delete-disp.php?id=<?php echo $id_computadora?>">Aceptar</a>
                             </div>
                         </div>
@@ -126,6 +127,11 @@
     </aside>
     <?php
         include('footer.php');
+        }
+        else{
+            header('Location: ../php/error.php');
+            die();
+        }
         }
         else{
             header('Location: ../php/error.php');

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/Sections-Styles.css">
+    <link rel="stylesheet" href="../css/historial-styles.css">
     <link rel="shotcut icon" href="../images/Logo-Santa-Fe.png">
     <title>Historial</title>
 </head>
@@ -12,11 +13,57 @@
     <?php
         session_start();
         if(isset($_SESSION['nombre']) && $_SESSION['permiso']==2){
+            if($_SESSION['disponibilidad']==1){
             include('admin-header.php');
     ?>
     <main>
-        <div class="mai-container">
-            <img class="fondo" src="../images/Fondo-Login.jpg" alt="">
+        <h2 class="table-title">Historial de Retiros y Devoluciones de Dispositivos</h2>
+        <div class="table-container">
+            <table class="historial-table">
+                <thead>
+                    <tr>
+                        <th>Usuario</th>
+                        <th>Dispositivo</th>
+                        <th>Observaciones</th>
+                        <th>Fecha de Retiro</th>
+                        <th>Fecha de Devolución</th>
+                        </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        include('coneccion.php');
+                        $consulta="SELECT DISTINCT usuarios.nombre, usuarios.apellido, computadoras.num_computadora, retiros_pc.observaciones, retiros_pc.fecha_hora_retiro, retiros_pc.fecha_hora_devolucion FROM `retiros_pc` LEFT JOIN `computadoras` ON (retiros_pc.id_computadora_f=computadoras.id_computadora) LEFT JOIN `usuarios` ON (retiros_pc.id_usuario_f=usuarios.id_usuario)";
+                        $get_historial=@mysqli_query($coneccion,$consulta);
+                        while($row=mysqli_fetch_array($get_historial)){
+                            $nombre=$row['nombre'];
+                            $apellido=$row['apellido'];
+                            $observaciones=$row['observaciones'];
+                            $num_computadora=$row['num_computadora'];
+                            $fecha_hora_retiro=$row['fecha_hora_retiro'];
+                            $fecha_hora_devolucion=$row['fecha_hora_devolucion'];
+
+                            if($fecha_hora_devolucion=="0000-00-00 00:00:00"){
+                                $fecha_hora_devolucion="";
+                            }
+
+                            ?>
+                            <tr>
+                                <td><?php echo $nombre." ".$apellido?></td>
+                                <td><?php echo $num_computadora?></td>
+                                <td><?php echo $observaciones?></td>
+                                <td><?php echo $fecha_hora_retiro?></td>
+                                <td><?php echo $fecha_hora_devolucion?></td>
+                            </tr>
+                            <?php
+                        }
+                    ?>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5"></td>
+                    </tr>
+                </tfoot>
+            </table>
         </div>
     </main>
     <aside>
@@ -41,6 +88,7 @@
     </aside>
     <?php
         include('footer.php');
+        }
         }
         else{
             header('Location: ../php/error.php');

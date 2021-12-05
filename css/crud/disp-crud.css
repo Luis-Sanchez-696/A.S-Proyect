@@ -10,10 +10,12 @@
     width: 30px;
     height: 30px;
     line-height: 26px;
+    cursor: pointer;
+    transition: .1s;
 }
 .edit:hover{
-    background-color: turquoise;
-    color: black;
+    background-color: lightskyblue;
+    transition: .1s;
 }
 .delete{
     display: inline-block;
@@ -24,10 +26,30 @@
     border-radius: 6px;
     width: 30px;
     height: 30px;
-    line-height: 26px;
+    line-height: 28px;
+    cursor: pointer;
+    transition: .1s;
 }
 .delete:hover{
     background-color: rgb(255, 83, 83);
+    transition: .1s;
+}
+.perfil{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: rgb(98, 0, 209);
+    border: 2px solid rgb(54, 0, 104);
+    border-radius: 6px;
+    width: 30px;
+    height: 30px;
+    line-height: 26px;
+    cursor: pointer;
+    transition: .1s;
+}
+.perfil:hover{
+    background-color: rgb(164, 67, 255) ;
+    transition: .1s;
 }
 .create{
     display: block;
@@ -51,6 +73,7 @@
 }
 .crud-action{
     line-height: 26px;
+    height: 26px;
 }
 .delete-alert{
     display: none;
@@ -101,11 +124,11 @@
     margin-right: -150px;
     margin-top: -4px;
 }
-label.modal-window-option{
+.modal-window-option.cancel{
     background-color: blue;
     color: white;
 }
-label.modal-window-option:hover{
+.modal-window-option.cancel:hover{
     background-color: lightskyblue;
     box-shadow: midnightblue 0px 0px 8px 1px;
     color: black;

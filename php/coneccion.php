@@ -1,11 +1,8 @@
 <?php
 
-$coneccion= @mysqli_connect('localhost', 'root', '', 'proyect_a.s');
-
+$coneccion= @mysqli_connect('localhost', 'root', '', 'as_project');
 if(!$coneccion){
     echo "error de coneccion<br>";
 }
-
-
 
 ?>
