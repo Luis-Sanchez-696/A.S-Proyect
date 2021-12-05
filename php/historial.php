@@ -31,14 +31,8 @@
                 </thead>
                 <tbody>
                     <?php
-<<<<<<< HEAD
                         include('../php/coneccion.php');
-                        $get_historial=@mysqli_query($coneccion,"SELECT DISTINCT usuarios.nombre, usuarios.apellido, computadoras.num_computadora, retiros_pc.observaciones, retiros_pc.fecha_hora_retiro, retiros_pc.fecha_hora_devolucion FROM `retiros_pc` LEFT JOIN `computadoras` ON (retiros_pc.id_computadora_f=computadoras.id_computadora) LEFT JOIN `usuarios` ON (retiros_pc.id_usuario_f=usuarios.id_usuario) ORDER BY retiros_pc.fecha_hora_retiro");
-=======
-                        include('coneccion.php');
-                        $consulta="SELECT DISTINCT usuarios.nombre, usuarios.apellido, computadoras.num_computadora, retiros_pc.observaciones, retiros_pc.fecha_hora_retiro, retiros_pc.fecha_hora_devolucion FROM `retiros_pc` LEFT JOIN `computadoras` ON (retiros_pc.id_computadora_f=computadoras.id_computadora) LEFT JOIN `usuarios` ON (retiros_pc.id_usuario_f=usuarios.id_usuario)";
-                        $get_historial=@mysqli_query($coneccion,$consulta);
->>>>>>> e885670b857b557a74ec330a4eb797abc5896914
+                        $get_historial=@mysqli_query($coneccion,"SELECT usuarios.nombre, usuarios.apellido, computadoras.num_computadora, retiros_pc.observaciones, retiros_pc.fecha_hora_retiro, retiros_pc.fecha_hora_devolucion FROM `retiros_pc` LEFT JOIN `computadoras` ON (retiros_pc.id_computadora_f=computadoras.id_computadora) LEFT JOIN `usuarios` ON (retiros_pc.id_usuario_f=usuarios.id_usuario) ORDER BY retiros_pc.fecha_hora_retiro");
                         while($row=mysqli_fetch_array($get_historial)){
                             $nombre=$row['nombre'];
                             $apellido=$row['apellido'];
