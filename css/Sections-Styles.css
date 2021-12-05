@@ -89,6 +89,8 @@ footer{
     border:1px solid black;
     border-radius: 12px 0px 0px 12px;
     padding-top: 4px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 24px;
 }
 .menu-container{
     margin-top: 28px;
@@ -98,7 +100,7 @@ footer{
 }
 .menu:hover{
     background-color: white;
-    transition: 0.1s;
+    transition: 0.2s;
 }
 .menu-icon{
     float: left;
@@ -108,6 +110,7 @@ footer{
     width:28px ;
     background-color: darkgray;
     border-radius: 16px;
+    transition: .2s;
 }
 label .menu-icon:hover{
     background-color: white;
@@ -120,6 +123,7 @@ label .menu-icon:hover{
     width:28px ;
     background-color: darkgray;
     border-radius: 16px;
+    transition: .2s;
 }
 label .menu-icon1:hover{
     background-color: mediumblue;

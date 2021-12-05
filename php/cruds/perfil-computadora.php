@@ -103,12 +103,27 @@
                                             <?php echo $nombreSW?>
                                         </td>
                                         <td>
-                                            <a title="Desinstalar Software" class="delete-sw" href="../cruds/delete-software.php?id=<?php echo $id_computadora?>&id2=<?php echo $id_software?>"><img class="delete-sw-action" src="../../icons/backspace_white_24dp.svg" alt="delete software register"></a>
+                                            <a title="Desinstalar Software" class="delete-sw" href="../cruds/perfil-computadora.php?id=<?php echo $id_computadora?>&id2=<?php echo $id_software?>"><img class="delete-sw-action" src="../../icons/backspace_white_24dp.svg" alt="delete software register"></a>
                                         </td>
                                     </tr>
                                     <?php
                                         }
+                                        if(isset($_GET['id']) && isset($_GET['id2'])){
+                                            echo "<input type='checkbox' name='delete-alert' id='delete-alert' class='uninstall-delete-alert' checked>";
+                                            $idComputadora=$_GET['id'];
+                                            $idSoftware=$_GET['id2'];
+                                        }
                                     ?>
+                                    <div class="uninstall-modal-window">
+                                        <div class="uninstall-modal-window-content">
+                                            <h2>Campus Virtual pregunta:</h2>
+                                            <p>¿Está seguro que desea Desintalar este Software del Dispositivo?</p>
+                                            <div class="uninstall-options-container">
+                                                <a class="uninstall-modal-window-option cancel" title="Cancelar Operación" href="../cruds/perfil-computadora.php?id=<?php echo $idComputadora?>">Cancelar</label>
+                                                <a title="Desinstalar Software" class="uninstall-modal-window-option delete-sw" href="../cruds/delete-software.php?id=<?php echo $idComputadora?>&id2=<?php echo $idSoftware?>">Desinstalar</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </tbody>
                                 <tfoot class="sw-table-foot">
                                     <tr>

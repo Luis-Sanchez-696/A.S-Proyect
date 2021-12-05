@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(isset($_SESSION['nombre']) && $_SESSION['permiso']==2){
-        if($_session['disponibilidad']==1){
+        if($_SESSION['disponibilidad']==1){
         if(isset($_REQUEST['enviar'])){
             include('../coneccion.php');
             if(isset($_GET['id'])){

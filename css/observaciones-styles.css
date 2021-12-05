@@ -54,7 +54,6 @@ h1{
     transition: .2s;
 }
 .obs-submit:hover{
-    transition: .2s;
     transform: scale(1.1);
 }
 .error-deuda-message{

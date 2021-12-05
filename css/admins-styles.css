@@ -3,13 +3,16 @@
 .table-container{
     min-height: calc(32px * 2);
     max-height: calc(32px * 16);
-    margin-top: 48px;
+    margin-top: 12px;
     overflow-y: scroll;
 }
 .admins-table{
     border-collapse: collapse;
     text-align: center;
     font-family: 'Roboto', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
 .admins-table tr{
     border: 1px solid black;
@@ -17,10 +20,13 @@
 }
 .admins-table td{
     border: 1px solid black;
-    width: 200px;
+    width: 140px;
 }
 .admins-table td.acciones{
-    width: 110px;
+    width: 90px;
+}
+.admins-table td.email{
+    width: 240px;
 }
 .admins-table thead tr{
     background-color: mediumblue;
@@ -140,4 +146,56 @@ a.modal-window-option:hover{
     margin-right: auto;
     margin-top: 21px;
     color: white;
+}
+.admin-search{
+    margin-top: 12px;
+    text-align: center;
+}
+.admin-search form{
+    display: flex;
+    width: calc(420px + 54px);
+    margin-left: auto;
+    margin-right: auto;
+}
+.admin-search .admin-search-button{
+    width: 54px;
+    background-color: grey;
+    border: 1px solid black;
+    cursor: pointer;
+}
+.admin-search .admin-search-button:hover{
+    background-color: lightgrey;
+}
+.admin-search .admin-dni{
+    height: 32px;
+    width: 420px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border: 1px solid black;
+    border-right: none;
+    font-family: 'Roboto', sans-serif;
+}
+.admin-search .admin-dni:hover{
+    border: 1px solid blue;
+}
+.admin-search .admin-search-button img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 21px;
+    transform: scale(1.3);
+    line-height: 30px;
+}
+.search-message{
+    background-color: lime;
+    border: 2px solid green;
+    width: 420px;
+    height: 100px;
+    text-align: center;
+    padding: 21px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 54px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 4px;
 }

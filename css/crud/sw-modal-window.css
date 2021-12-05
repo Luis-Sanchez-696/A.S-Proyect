@@ -86,17 +86,17 @@
     width: 18px;
 }
 .sw-option-list::-webkit-scrollbar-track{
-    background-color: rgb(255, 255, 255);
+    background-color: black;
+    border: 7px solid midnightblue;
 }
 .sw-option-list::-webkit-scrollbar-thumb{
-    background-color: midnightblue;
-    border-left: 3px solid rgb(255, 255, 255);
-    border-right: 3px solid rgb(255, 255, 255);
+    background-color: #00a3bc;
+    border-left: 3px solid midnightblue;
+    border-right: 3px solid midnightblue;
     border-radius: 8px;
-    border-top: 3px solid white;
 }
 .sw-option-list::-webkit-scrollbar-thumb:hover{
-    background-color: blue;
+    background-color: turquoise;
 }
 .install-sw{
     display: none;

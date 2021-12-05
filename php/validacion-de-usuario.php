@@ -82,6 +82,7 @@ if($salida3=="TRUE"){
         $real_name=$mostrar['nombre'];
         $apellido=$mostrar['apellido'];
         $disponibilidad=$mostrar['disponibilidad'];
+        $id_usuario=$mostrar['id_usuario'];
     }
 
     if($rango==2){
@@ -92,6 +93,7 @@ if($salida3=="TRUE"){
         $_SESSION['realName']=$real_name;
         $_SESSION['apellido']=$apellido;
         $_SESSION['disponibilidad']=$disponibilidad;
+        $_SESSION['id-usuario']=$id_usuario;
         header('Location:../php/admin-page.php');
         die();
     }
@@ -103,6 +105,7 @@ if($salida3=="TRUE"){
         $_SESSION['realName']=$real_name;
         $_SESSION['apellido']=$apellido;
         $_SESSION['disponibilidad']=$disponibilidad;
+        $_SESSION['id-usuario']=$id_usuario;
         header('Location: ../php/user-page.php');
         die();
     }
