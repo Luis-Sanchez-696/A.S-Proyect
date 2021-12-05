@@ -15,6 +15,7 @@
         if(isset($_SESSION['nombre']) && $_SESSION['permiso']==2){
             if($_SESSION['disponibilidad']==1){
             include('admin-header.php');
+            include('coneccion.php');
     ?>
         <main>
             <div class="main-container">

@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');  
+
+#boton-apps img{
+width: 20px;
+}
+
+#boton-apps{
+    padding: 8px 20px 0px 20px;
+    background-color: rgb(4, 182, 72);
+    border:1px solid rgb(29, 228, 3);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.15s linear;
+}
+#boton-apps:hover{
+    color: white;
+    font-weight: bold;
+    background-color: rgb(74, 253, 57);
+    border:1px solid rgb (72,253,57);
+    box-shadow: rgb(150, 148, 148)  2px 5px 10px;
+    transition: 0.5s ease;
+}
+#boton-restringido{
+    padding: 10px 2px 0px 2px;
+    background-color: rgb(113, 114, 113);
+    border:1px solid rgb(78, 78, 78);
+    border-radius: 8px;
+    font-family: 'play', sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    opacity: 0.5;
+}
+#disponibilidad1{
+    color:rgb(82, 163, 1);
+    font-weight: bold;
+}
+.ver-aplicaciones{
+    width: 100px !important;;
+}
+.list-pc{
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    font-family: 'roboto',sans-serif;
+    box-shadow: black 10px 10px 10px;
+}
+
+.list-pc tr{
+    border: 1px solid black;
+    text-align: center;
+    height: 32px;
+    background-color: white;
+    color: black;
+}
+.list-pc td{
+    border: 1px solid black;
+    text-align: center;
+    width: 180px;
+    height: 40px;
+}
+.list-head tr{
+    font-family: 'loto', sans-serif;
+    background-color: mediumblue;
+    color: white;
+}
+.list-head td{
+    border: solid 1px mediumblue !important;
+    width: 50px;
+}
+.list-foot tr{
+    background-color: mediumblue;
+    color: white;
+}
+.table-container{
+    min-height: calc(32px *2);
+    max-height:calc(32px *13);
+    overflow-y: scroll;
+    margin-top: 48px;
+}
+.list-pc thead tr{
+    position:sticky;
+    top:-1px;
+}
+.list-pc tfoot tr{
+    position:sticky;
+    bottom:-1px;
+}

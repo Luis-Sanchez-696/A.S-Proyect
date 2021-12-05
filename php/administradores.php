@@ -38,6 +38,7 @@
                     </thead>
                     <tbody>
                         <?php
+<<<<<<< HEAD
                             include('../php/coneccion.php');
                             if(isset($_REQUEST['enviar'])){
                                 if(isset($_REQUEST['dni'])){
@@ -71,6 +72,11 @@
                             else{
                                 $get_data=@mysqli_query($coneccion, "SELECT DISTINCT usuarios.id_usuario, usuarios.nombre, usuarios.apellido, usuarios.nombre_usuario, usuarios.dni, usuarios.tel_movil, usuarios.e_mail FROM `usuarios` WHERE usuarios.id_rango_f=2 AND usuarios.disponibilidad=1");
                                 while($row=mysqli_fetch_array($get_data)){
+=======
+                            include('coneccion.php');
+                            $get_data=@mysqli_query($coneccion, "SELECT usuarios.id_usuario, usuarios.nombre, usuarios.apellido, usuarios.nombre_usuario, usuarios.dni, usuarios.tel_movil, usuarios.e_mail FROM `usuarios` WHERE usuarios.id_rango_f=2 AND usuarios.disponibilidad=1;");
+                            while($row=mysqli_fetch_array($get_data)){
+>>>>>>> e885670b857b557a74ec330a4eb797abc5896914
                                 $nombre=$row['nombre'];
                                 $apellido=$row['apellido'];
                                 $usuario=$row['nombre_usuario'];

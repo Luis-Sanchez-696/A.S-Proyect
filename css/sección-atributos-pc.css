@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,100&display=swap');
+*{
+margin: 0;
+padding: 0;
+}
+body{
+    background-color: lightgray;
+}
+main{
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+    border-radius: 5px;
+    width: 1000px;
+    height: 90%;
+    background-color: white;
+    box-shadow: black 20px 20px 15px;
+    font-family: 'Roboto', sans-serif;
+}
+#pc{
+    margin-top: 40px;
+    width: 600px;
+    height: 350px;
+    border-radius: 5px;
+}
+h1{
+    text-align: center;
+    font-family: 'Montserrat',sans-serif !important;
+
+}
+#num_pc{
+font-family: 'Montserrat',sans-serif !important;
+color: midnightblue;
+position: relative;
+left: 651px;
+bottom: 37px;
+width: 30px;
+font-size: 30px;
+font-weight: bold;
+}
+.apps-pc{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.apps-pc td{
+padding-left: 100px;
+width: 160px;
+height: 30px;
+}
+h3{
+    font-family: 'Montserrat',sans-serif !important;
+    padding-top: 30px;
+    padding-bottom: 30px;  
+    padding-left: 100px;
+}
+.pc td{
+    padding-left: 100px;
+    width: 100px;
+    height: 30px;    
+}
+.elementos-pc{
+    font-weight: bold;
+}
+
+main img{
+    margin-left: 200px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    border: black solid 1px;
+    box-shadow: black 10px 15px 10px;
+
+}
+.volver{
+    position:relative;
+    top: 60px;
+    left: 520px ;
+    text-decoration: none;
+    background-color: rgb(4, 61, 184);
+    padding: 10px 28px 10px 28px ;
+    border-radius: 5px;
+    color:white;
+    font-weight: bold;
+    
+}
+.volver:hover{
+    padding: 12px 30px 12px 30px ;
+    background-color: rgba(17, 233, 248, 0.959) ;
+    border: solid 1px rgb(4, 61, 184);
+}
+.reservar{
+    position:relative;
+    top: 60px;
+    left: 260px ;
+    text-decoration: none;
+    background-color: rgb(13, 173, 7);
+    padding: 10px 18px 10px 18px ;
+    border-radius: 5px;
+    color:white;
+    font-weight: bold;
+}
+.reservar:hover{
+    padding: 12px 20px 12px 20px ;
+    background-color: rgb(15, 245, 7);
+}
+.modal{
+    background-color: rgb(250, 253, 250);
+    border-radius: 10px;
+    border: mediumblue solid 4px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 500px;
+    height: 200px;
+    visibility: hidden;
+    transform: translatey(-500px);
+}
+.modal .container{
+    background-color:rgb(7, 245, 233);
+    width: 500px;
+    height: 200px; 
+    transition: top .6s;
+}
+.modal section{
+    width: 500px;
+    height: 200px;
+    background-color: rgb(252, 250, 250) ;
+    border-radius: 10px;
+}
+.modal p{
+    font-size: 25px;
+    text-align: center;
+    padding-top: 20px;
+}
+#pregunta{
+    font-family:'Lato', sans-serif;
+    font-weight: bolder;
+    text-decoration: black underline;
+}
+.modal:target{
+    visibility: visible;
+    transition: .6s;
+}
+.cerrar{
+    position:relative;
+    top: 100px;
+    left: 300px ;
+    text-decoration: none;
+    background-color: rgb(4, 61, 184);
+    padding: 10px 28px 10px 28px ;
+    border-radius: 5px;
+    color:white;
+    font-weight: bold;
+    
+}
+.cerrar:hover{
+    padding: 12px 30px 12px 30px ;
+    background-color: rgba(17, 233, 248, 0.959) ;
+    border: solid 1px rgb(4, 61, 184);
+}
+.aceptar-reserva{
+    position:relative;
+    top: 100px;
+    left: 50px ;
+    text-decoration: none;
+    background-color: rgb(13, 173, 7);
+    padding: 10px 30px 10px 30px ;
+    border-radius: 5px;
+    color:white;
+    font-weight: bold;
+}
+.aceptar-reserva:hover{
+    padding: 12px 32px 12px 32px ;
+    background-color: rgb(15, 245, 7);
+}
+.ventana-reserva{
+    background-color: rgb(250, 253, 250);
+    border-radius: 10px;
+    border: mediumblue solid 4px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 500px;
+    height: 200px;
+    text-align: center;
+}
+.ventana-reserva p{
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+}
+.ventana-reserva h1{
+    font-family: 'Roboto', sans-serif;
+    color: rgb(4, 182, 19);
+}
+.ventana-reserva h5{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: mediumblue;
+}
+.return-user-page{
+    position:relative;
+    top: 40px;
+    left: 0px ;
+    text-decoration: none;
+    background-color: rgb(4, 61, 184);
+    padding: 10px 28px 10px 28px ;
+    border-radius: 5px;
+    color:white;
+    font-weight: bold;
+    
+}
+.return-user-page:hover{
+    padding: 12px 30px 12px 30px ;
+    background-color: rgba(17, 233, 248, 0.959) ;
+    border: solid 1px rgb(4, 61, 184);
+}
+.ventana-reserva .reserva-no-realizada{
+    color: red;
+    padding-bottom: 15px;
+}

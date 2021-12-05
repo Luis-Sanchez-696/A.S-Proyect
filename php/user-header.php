@@ -1,5 +1,5 @@
 <header>
-        <div class="header-background">Sistema de Retiro y Devolución de PC's y Dispositivos</div>
+        <div class="header-background">Sistema de Retiro y Devolución de PC's</div>
         <a href="../php/user-page.php" title="Inicio"><img class="reload" src="../images/Logo-Domingo-Silva.jpeg" alt="Logo Domingo Guzmán Silva"></a>
         <p class="mensaje-inicio">Ir al Inicio</p>
         <input class="user-check" type="checkbox" id="user-account">
