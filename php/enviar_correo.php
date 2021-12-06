@@ -71,7 +71,8 @@
                 $mail->SubjecT = $subject; 
                 $mail->Body = $bodyemail;
     ?>
-    <?php       if(!$mail->send()){
+    <?php       
+        if(!$mail->send()){
     ?> 
         <div class="ventana-reserva">
         <H1 class="reserva-no-realizada" > No se pudo realizar la reserva</H1>
@@ -80,12 +81,23 @@
         </div>
     <?php
         }else{
-            $update="UPDATE `computadoras` SET id_estado_f=2 WHERE id_computadora='$id_pc'";
-            $query=@mysqli_query($coneccion,$update);
-            if(isset($update)){
-            
-            }else{
-            echo "No se ha padido editar";
+            $reservas_counter=@mysqli_query($coneccion, "SELECT reservaciones FROM `usuarios` WHERE id_usuario='$id_usuario'");
+            if($row=mysqli_fetch_array($reservas_counter)){
+                $counter=$row['reservaciones'];
+            }
+            if($counter==0){
+                $update="UPDATE `computadoras` SET id_estado_f=2 WHERE id_computadora='$id_pc'";
+                $query=@mysqli_query($coneccion,$update);
+                if(isset($update)){
+                    $set_reserva=@mysqli_query($coneccion, "UPDATE `usuarios` SET reservaciones=1 WHERE id_usuario='$id_usuario'");
+                }
+            }
+            else{
+                ?>
+                <div class="reserva-error">
+                    Lo sentimos, pero no puede realizar otra reserva hasta no devolver el dispositivo que aún tiene en posesión.
+                </div>
+                <?php
             }
     ?>
     <div class="ventana-reserva">

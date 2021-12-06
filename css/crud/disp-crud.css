@@ -64,9 +64,10 @@
     float: right;
     text-decoration: none;
     text-align: center;
-    line-height: 28px;
+    line-height: 30px;
     margin-top: 12px;
     transition: .2s;
+    font-family: 'Roboto', sans-serif;
 }
 .create:hover{
     box-shadow: limegreen 0px 0px 12px 3px;

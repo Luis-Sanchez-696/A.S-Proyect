@@ -64,6 +64,7 @@
                             $fecha_devolucion=date("Y")."-".date("m")."-".date("d")." ".date("H").":".date("i").":".date("s");
                             $set_fecha_devolucion=@mysqli_query($coneccion, "UPDATE `retiros_pc` SET observaciones='$valid_observaciones', fecha_hora_retiro='$fecha_retiro', fecha_hora_devolucion='$fecha_devolucion' WHERE (id_computadora_f='$idComputadora' AND id_usuario_f='$idUsuario') AND fecha_hora_devolucion='0000-00-00 00:00:00'");
                             if($set_fecha_devolucion){
+                                $restore_counter=@mysqli_query($coneccion, "UPDATE `usuarios` SET reservaciones=0");
                                 header("Location: ../php/no-devueltos.php?message=SI");
                                 die();
                             }
