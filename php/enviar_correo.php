@@ -18,8 +18,10 @@
         $condicion;
     include('coneccion.php');
 
+        $segunda_consulta="SELECT computadoras.id_computadora,computadoras.num_computadora, computadora_tipo.id_tipo_pc,computadora_tipo.tipo_pc FROM computadoras LEFT JOIN `computadora_tipo` ON(computadora_tipo.id_tipo_pc=computadoras.id_tipo_pc_f) WHERE computadoras.id_computadora='$id_pc'";
         $consulta="SELECT id_usuario,nombre_usuario,password_user,e_mail FROM `usuarios` WHERE id_usuario='$id_usuario' AND nombre_usuario='$usuario'";
         $datos=@mysqli_query($coneccion,$consulta); 
+        $datos_pc=@mysqli_query($coneccion, $segunda_consulta);
 
 //-----------------------------------------------------------------------------------------
 
@@ -29,13 +31,18 @@
                 $contraseña=$mostrar['password_user'];
                 $email=$mostrar['e_mail'];
                 }
+
+            $regisro_pc=mysqli_fetch_array($datos_pc); 
+            $num_pc=$regisro_pc['num_computadora'];
+            $tipo_pc=$regisro_pc['tipo_pc'];
+
     include("Mailer/src/PHPMailer.php");
     include("Mailer/src/SMTP.php");
     include("Mailer/src/Exception.php");
     include("Mailer/src/OAuth.php");
         $emailTo=$email;
         $subject= 'Reserva de computadora' ;
-        $bodyemail="Hola ".$nombre_usuario.", has reservador el equipo N° ".$id_pc.". Para retirar el equipo debes mostrar este mensaje en el gabinete de PC. Gracias";//asunto;
+        $bodyemail="Hola ".$nombre_usuario.", has reservado la ".$tipo_pc." Número ".$num_pc.". Para retirar el equipo debes mostrar este mensaje en el gabinete de PC. Gracias";//asunto;
 
 
         $mail = new PHPMailer\PHPMailer\PHPMailer();
@@ -106,8 +113,10 @@
     }
     else{
         ?>
-            <div class="reserva-error">
-                Lo sentimos, pero no puede realizar otra reserva hasta no devolver el dispositivo que aún tiene en posesión.
+            <div class="ventana-reserva">
+            <H1  id="ya-reservado"> YA HAS RESERVADO UN EQUIPO</H1>
+            <p id="text-reserva-no-realizada">SI DESEA OTRO EQUIPO, ENVÍA UN MAIL AL PERSONAL DEL GABINETE PARA DAR DE BAJA LA RESERVA ACTUAL, O DEVUELVE EL EQUIPO EN POSESIÓN</p>
+            <a class="return-user-page" href="user-page.php">Volver</a>
             </div>
             <?php
     }
