@@ -1,5 +1,6 @@
     <head>
     <link rel="stylesheet" href="../css/sección-atributos-pc.css">
+    <link rel="shotcut icon" href="../images/Logo-Santa-Fe.png">
     <title>Reserva</title>
     </head>
     <body>
@@ -40,10 +41,10 @@
         $mail = new PHPMailer\PHPMailer\PHPMailer();
         $emailre="gabinete_computadoras@outlook.com";
         $formname="Personal del gabinete de PC";
-        $host="smtp.outlook.com";
+        $host="smtp.office365.com";
         $port="587";
         $SMTPAuth="Login";
-        $SMTPSecure="tls";
+        $SMTPSecure="STARTTLS";
         $password="DomingoGusmanSilva2021";
 
         $mail = new PHPMailer\PHPMailer\PHPMailer();
