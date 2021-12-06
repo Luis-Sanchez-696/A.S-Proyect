@@ -40,10 +40,10 @@
         $mail = new PHPMailer\PHPMailer\PHPMailer();
         $emailre="gabinete_computadoras@outlook.com";
         $formname="Personal del gabinete de PC";
-        $host="smtp.outlook.com";
+        $host="smtp.office365.com";
         $port="587";
         $SMTPAuth="Login";
-        $SMTPSecure="tls";
+        $SMTPSecure="STARTTLS";
         $password="DomingoGusmanSilva2021";
 
         $mail = new PHPMailer\PHPMailer\PHPMailer();
@@ -71,7 +71,12 @@
                 $mail->SubjecT = $subject; 
                 $mail->Body = $bodyemail;
     ?>
-    <?php       
+    <?php  
+        $reservas_counter=@mysqli_query($coneccion, "SELECT reservaciones FROM `usuarios` WHERE id_usuario='$id_usuario'");
+        if($row=mysqli_fetch_array($reservas_counter)){
+            $counter=$row['reservaciones'];
+        }
+        if($counter==0){
         if(!$mail->send()){
     ?> 
         <div class="ventana-reserva">
@@ -80,25 +85,14 @@
         <a class="return-user-page" href="user-page.php">Volver</a>
         </div>
     <?php
-        }else{
-            $reservas_counter=@mysqli_query($coneccion, "SELECT reservaciones FROM `usuarios` WHERE id_usuario='$id_usuario'");
-            if($row=mysqli_fetch_array($reservas_counter)){
-                $counter=$row['reservaciones'];
+        }
+        else{
+            $update="UPDATE `computadoras` SET id_estado_f=2 WHERE id_computadora='$id_pc'";
+            $query=@mysqli_query($coneccion,$update);
+            if(isset($update)){
+                $set_reserva=@mysqli_query($coneccion, "UPDATE `usuarios` SET reservaciones=1 WHERE id_usuario='$id_usuario'");
             }
-            if($counter==0){
-                $update="UPDATE `computadoras` SET id_estado_f=2 WHERE id_computadora='$id_pc'";
-                $query=@mysqli_query($coneccion,$update);
-                if(isset($update)){
-                    $set_reserva=@mysqli_query($coneccion, "UPDATE `usuarios` SET reservaciones=1 WHERE id_usuario='$id_usuario'");
-                }
-            }
-            else{
-                ?>
-                <div class="reserva-error">
-                    Lo sentimos, pero no puede realizar otra reserva hasta no devolver el dispositivo que aún tiene en posesión.
-                </div>
-                <?php
-            }
+        }
     ?>
     <div class="ventana-reserva">
         <H1> ¡Reserva exitosa!</H1>
@@ -107,7 +101,15 @@
         <a class="return-user-page" href="user-page.php">Volver</a>
     </div>
 
-    <?php    }
+    <?php    
+    }
+    else{
+        ?>
+            <div class="reserva-error">
+                Lo sentimos, pero no puede realizar otra reserva hasta no devolver el dispositivo que aún tiene en posesión.
+            </div>
+            <?php
+    }
         
     } catch(exception $e){
     
