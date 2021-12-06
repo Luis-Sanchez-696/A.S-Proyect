@@ -42,7 +42,7 @@
     include("Mailer/src/OAuth.php");
         $emailTo=$email;
         $subject= 'Reserva de computadora' ;
-        $bodyemail="Hola ".$nombre_usuario.", has reservado la ".$tipo_pc." Número ".$num_pc.". Para retirar el equipo debes mostrar este mensaje en el gabinete de PC. Gracias";//asunto;
+        $bodyemail="Hola ".$nombre_usuario.", has reservado la ".$tipo_pc." Numero ".$num_pc.". Para retirar el equipo debes mostrar este mensaje en el gabinete de PC. Gracias";//asunto;
 
 
         $mail = new PHPMailer\PHPMailer\PHPMailer();

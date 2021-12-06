@@ -175,6 +175,7 @@ main img{
     background-color: rgb(15, 245, 7);
 }
 .ventana-reserva{
+    margin-top: 100px;
     background-color: rgb(250, 253, 250);
     border-radius: 10px;
     border: mediumblue solid 4px;
