@@ -17,6 +17,12 @@
             include('admin-header.php');
             ?>
         <main>
+            <div class="admin-search">
+                <form action="../php/administradores.php" method="POST">
+                    <input name="dni" type="number" class="admin-dni" placeholder="Ingrese Número de DNI:">
+                    <button title="Buscar" name="enviar" class="admin-search-button" type="submit"><img src="../icons/search_white_24dp.svg" alt="search-icon"></button>
+                </form>
+            </div>
             <div class="table-container">
                 <table class="admins-table">
                     <thead>
@@ -32,9 +38,39 @@
                     </thead>
                     <tbody>
                         <?php
-                            include('coneccion.php');
-                            $get_data=@mysqli_query($coneccion, "SELECT usuarios.id_usuario, usuarios.nombre, usuarios.apellido, usuarios.nombre_usuario, usuarios.dni, usuarios.tel_movil, usuarios.e_mail FROM `usuarios` WHERE usuarios.id_rango_f=2 AND usuarios.disponibilidad=1;");
-                            while($row=mysqli_fetch_array($get_data)){
+                            include('../php/coneccion.php');
+                            if(isset($_REQUEST['enviar'])){
+                                if(isset($_REQUEST['dni'])){
+                                $search=$_REQUEST['dni'];
+                                $get_data=@mysqli_query($coneccion, "SELECT DISTINCT usuarios.id_usuario, usuarios.nombre, usuarios.apellido, usuarios.nombre_usuario, usuarios.dni, usuarios.tel_movil, usuarios.e_mail FROM `usuarios` WHERE (usuarios.id_rango_f=2 AND usuarios.disponibilidad=1) AND usuarios.dni='$search'");
+                                while($row=mysqli_fetch_array($get_data)){
+                                    $nombre=$row['nombre'];
+                                    $apellido=$row['apellido'];
+                                    $usuario=$row['nombre_usuario'];
+                                    $dni=$row['dni'];
+                                    $tel_movil=$row['tel_movil'];
+                                    $e_mail=$row['e_mail'];
+                                    $id_usuario=$row['id_usuario'];
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $nombre?></td>
+                                        <td><?php echo $apellido?></td>
+                                        <td><?php echo $usuario?></td>
+                                        <td><?php echo $dni?></td>
+                                        <td><?php echo $tel_movil?></td>
+                                        <td class="email"><?php echo $e_mail?></td>
+                                        <td class="acciones">
+                                            <a class="baja-admin" title="Dar de Baja" href="../php/administradores.php?id=<?php echo $id_usuario?>"><img class="baja-admin-icon" src="../icons/disabled_by_default_white_24dp.svg" alt="baja-cuenta-admin-icon"></a>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                }
+
+                                }
+                            }
+                            else{
+                                $get_data=@mysqli_query($coneccion, "SELECT DISTINCT usuarios.id_usuario, usuarios.nombre, usuarios.apellido, usuarios.nombre_usuario, usuarios.dni, usuarios.tel_movil, usuarios.e_mail FROM `usuarios` WHERE usuarios.id_rango_f=2 AND usuarios.disponibilidad=1");
+                                while($row=mysqli_fetch_array($get_data)){
                                 $nombre=$row['nombre'];
                                 $apellido=$row['apellido'];
                                 $usuario=$row['nombre_usuario'];
@@ -55,6 +91,7 @@
                                     </td>
                                 </tr>
                                 <?php
+                                }
                             }
                             if(isset($_GET['id'])){
                                 $id_usuario=$_GET['id'];
@@ -80,6 +117,13 @@
                 </table>
             </div>
             <?php
+            if(isset($_REQUEST['enviar'])){
+                ?>
+                <div class="search-message">
+                    Resultados encontrados. Presione <b>F5</b> si desea volver al registro inicial, o si lo desea puede realizar otras búsquedas.
+                </div>
+                <?php
+            }
                 if(isset($_GET['message'])){
                     $mensaje=$_GET['message'];
                     if($mensaje=="SI"){
@@ -129,5 +173,6 @@
         die();
     }
     ?>
+    <script src="../js/evitar-reenvios.js"></script>
 </body>
 </html>

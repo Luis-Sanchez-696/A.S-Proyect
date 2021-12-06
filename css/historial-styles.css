@@ -36,6 +36,9 @@ thead tr{
     position: sticky;
     top: -1px;
 }
+.historial-table{
+    width: 100%;
+}
 .historial-table tfoot tr{
     position: sticky;
     bottom: -1px;

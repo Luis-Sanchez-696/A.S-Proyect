@@ -56,7 +56,7 @@
     background-color: limegreen;
     border: 2px solid green;
     color: white;
-    width: 132px;
+    width: 142px;
     height: 34px;
     border-radius: 8px;
     margin-left: auto;
@@ -64,8 +64,10 @@
     float: right;
     text-decoration: none;
     text-align: center;
-    line-height: 28px;
-    margin-top: 6px;
+    line-height: 30px;
+    margin-top: 12px;
+    transition: .2s;
+    font-family: 'Roboto', sans-serif;
 }
 .create:hover{
     box-shadow: limegreen 0px 0px 12px 3px;
@@ -79,6 +81,21 @@
     display: none;
 }
 .modal-window{
+    background-color: white;
+    height: 210px;
+    text-align: center;
+    width: 480px;
+    z-index: 10;
+    border: 4px solid mediumblue;
+    border-radius: 8px;
+    position: fixed;
+    left: calc(50% - 240px - 4px);
+    top: 62px;
+    transition: .6s;
+    visibility: hidden;
+    transform: translateY(-600px);
+}
+.modal-window-two{
     background-color: white;
     height: 210px;
     text-align: center;
@@ -146,4 +163,96 @@ a.modal-window-option:hover{
     transition: .6s;
     visibility: visible;
     transform: translateY(0px);
+}
+.retiro-alert:checked ~ .modal-window-two{
+    transition: .6s;
+    visibility: visible;
+    transform: translateY(0px);
+}
+/*----------Estilos deol buscador de dispositivos------------*/
+.head-options-container{
+    display: flex;
+}
+.disp-search{
+    margin-top: 12px;
+    text-align: center;
+    width: 100%;
+}
+.disp-search form{
+    display: flex;
+    margin-left: calc(50% - 240px - 27px + 71px);
+}
+.disp-search .disp-search-button{
+    width: 54px;
+    background-color: grey;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: .2s;
+}
+.disp-search .disp-search-button:hover{
+    background-color: lightgrey;
+}
+.disp-search .disp-search-input{
+    height: 32px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border: 1px solid black;
+    border-right: none;
+    width: 240px;
+    transition: .2s;
+    font-family: 'Roboto', sans-serif;
+}
+.disp-search .disp-search-input:hover{
+    border: 1px solid blue;
+}
+.disp-search .disp-search-button img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 21px;
+    transform: scale(1.3);
+    line-height: 30px;
+}
+.search-confirm-message{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    margin-top: -18px;
+    background-color: lime;
+    width: 400px;
+    height: 32px;
+    border: 2px solid green;
+    border-radius: 4px;
+    line-height: 28px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.search-error-message{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    margin-top: -18px;
+    background-color: red;
+    width: 800px;
+    height: 54px;
+    border: 2px solid rgb(129, 0, 26);
+    border-radius: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    padding-top: 7px;
+}
+.retiro{
+    background-color: orange;
+    border: 2px solid orangered;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border-radius: 6px;
+    width: 30px;
+    height: 30px;
+    line-height: 26px;
+    cursor: pointer;
+    transition: .1s;
+}
+.retiro:hover{
+    background-color: yellow;
 }

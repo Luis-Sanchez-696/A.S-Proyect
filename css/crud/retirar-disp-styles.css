@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: lightgray;
+}
+.form-container{
+    width: 700px;
+    height: 460px;
+    border: 4px solid midnightblue;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: calc(50vh - 230px);
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+}
+h1{
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 12px;
+}
+h1 u{
+    color: mediumblue;
+    text-decoration: none;
+}
+.retiro-form{
+    margin-top: 12px;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.form-input{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Roboto', sans-serif;
+}
+.form-input.dni{
+    padding-left: 8px;
+    width: 500px;
+    height: 32px;
+    margin-top: 8px;
+    margin-bottom: 18px;
+}
+.observaciones{
+    min-width: 500px;
+    max-width: 500px;
+    min-height: 200px;
+    max-height: 200px;
+    padding-left: 12px;
+    padding-top: 4px;
+    padding-right: 12px;
+    padding-bottom: 4px;
+    margin-top: 8px;
+}
+.retiro-submit{
+    margin-top: 38px;
+    width: 180px;
+    height: 32px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    background-color: lime;
+    border: 2px solid green;
+    transition: .2s;
+}
+.retiro-submit:hover{
+    transform: scale(1.1);
+}
+.retiro-error-message{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    background-color: crimson;
+    border: 2px solid rgb(119, 0, 0);
+    min-height: 32px;
+    line-height: 28px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 32px;
+    color: white;
+}
+.retiro-confirm-message{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    background-color: lime;
+    border: 2px solid green;
+    min-height: 32px;
+    line-height: 28px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 32px;
+    color: black;
+}
+.return-register{
+    display: block;
+    background-color: blue;
+    border: 1px solid black;
+    border-radius: 6px;
+    width: 42px;
+    height: 32px;
+    transition: .2s;
+    margin-top: -32px;
+    margin-left: 21px;
+}
+.return-register img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -1px;
+    transition: .2s;
+    height: 32px;
+}
+.return-register:hover{
+    background-color: #01c0dd;
+}
+.return-register img:hover{
+    transform: translateX(-4px);
+}

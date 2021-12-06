@@ -17,7 +17,7 @@
             }
         }
         public function create($num_computadora, $id_tipo_pc_f, $id_estado_f, $cargador, $conexion_internet, $camara, $condicion){
-            $sql="INSERT INTO `computadoras` (num_computadora, id_tipo_pc_f, id_estado_f, cargador, conexion_internet, camara, condicion) VALUES ('$num_computadora', '$id_tipo_pc_f', '$id_estado_f', '$cargador', '$conexion_internet', '$camara', '$condicion')";
+            $sql="INSERT INTO `computadoras` (num_computadora, id_tipo_pc_f, id_estado_f, cargador, conexion_internet, camara, condicion, disponibilidad) VALUES ('$num_computadora', '$id_tipo_pc_f', '$id_estado_f', '$cargador', '$conexion_internet', '$camara', '$condicion', 1)";
             $insertar=@mysqli_query($this->connect, $sql);
             if($insertar){
                 return TRUE;
@@ -27,7 +27,7 @@
             }
         }
         public function read(){
-            $sql="SELECT DISTINCT computadoras.id_computadora, computadoras.num_computadora, computadora_tipo.tipo_pc, computadoras.cargador, computadoras.conexion_internet, computadoras.camara, computadoras.condicion, estado_tipo.estado FROM `computadoras` LEFT JOIN `computadora_tipo` ON (computadoras.id_tipo_pc_f=computadora_tipo.id_tipo_pc) LEFT JOIN `estado_tipo` ON (computadoras.id_estado_f=estado_tipo.id_estado)";
+            $sql="SELECT DISTINCT computadoras.id_computadora, computadoras.num_computadora, computadora_tipo.tipo_pc, computadoras.cargador, computadoras.conexion_internet, computadoras.camara, computadoras.condicion, estado_tipo.estado FROM `computadoras` LEFT JOIN `computadora_tipo` ON (computadoras.id_tipo_pc_f=computadora_tipo.id_tipo_pc) LEFT JOIN `estado_tipo` ON (computadoras.id_estado_f=estado_tipo.id_estado) WHERE computadoras.disponibilidad=1";
             $read=@mysqli_query($this->connect, $sql);
             return $read;
         }
@@ -48,7 +48,7 @@
             }
         }
         public function delete($id_computadora){
-            $sql="DELETE FROM `computadoras` WHERE id_computadora='$id_computadora'";
+            $sql="UPDATE `computadoras` SET disponibilidad=0 WHERE id_computadora='$id_computadora'";
             $delete=@mysqli_query($this->connect, $sql);
             if($delete){
                 return TRUE;
