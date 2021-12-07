@@ -31,7 +31,7 @@
                 <tbody>
                     <?php
                         include('../php/coneccion.php');
-                        $get_historial=@mysqli_query($coneccion,"SELECT DISTINCT usuarios.nombre, usuarios.apellido, computadoras.num_computadora, retiros_pc.fecha_hora_retiro, retiros_pc.id_computadora_f, retiros_pc.id_usuario_f FROM `retiros_pc` LEFT JOIN `computadoras` ON (retiros_pc.id_computadora_f=computadoras.id_computadora) LEFT JOIN `usuarios` ON (retiros_pc.id_usuario_f=usuarios.id_usuario) WHERE computadoras.id_estado_f=3 AND retiros_pc.fecha_hora_devolucion='0000-00-00 00:00:00'");
+                        $get_historial=@mysqli_query($coneccion,"SELECT DISTINCT usuarios.nombre, usuarios.apellido, computadoras.num_computadora, retiros_pc.fecha_hora_retiro, retiros_pc.id_computadora_f, retiros_pc.id_usuario_f FROM `retiros_pc` LEFT JOIN `computadoras` ON (retiros_pc.id_computadora_f=computadoras.id_computadora) LEFT JOIN `usuarios` ON (retiros_pc.id_usuario_f=usuarios.id_usuario) WHERE computadoras.id_estado_f=3 AND retiros_pc.fecha_hora_devolucion='0000-00-00 00:00:00' ORDER BY fecha_hora_retiro");
                         while($row=mysqli_fetch_array($get_historial)){
                             $id_computadora_f=$row['id_computadora_f'];
                             $id_usuario_f=$row['id_usuario_f'];

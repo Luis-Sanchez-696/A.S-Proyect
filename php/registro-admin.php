@@ -111,6 +111,13 @@
                                                     <td><?php echo $condicion?></td>
                                                     <td><?php echo $estado?></td>
                                                     <td>
+                                                    <?php
+                                                        if($estado=="Reservado"){
+                                                            ?>
+                                                            <a title="Retirar" class="retiro" href="../php/registro-admin.php?id2=<?php echo $id_computadora?>"><img class="crud-action" src="../icons/check_circle_white_24dp.svg" alt="retirar-disp-icon"></a>
+                                                            <?php
+                                                        }
+                                                    ?>
                                                         <a title="Ver Detalles" class="perfil" href="../php/cruds/perfil-computadora.php?id=<?php echo $id_computadora?>"><img class="crud-action" src="../icons/info_white_24dp.svg" alt="perfil-pc"></a>
                                                         <a title="Editar Registro" class="edit" href="../php/cruds/edit-disp.php?id=<?php echo $id_computadora?>"><img class="crud-action" src="../icons/edit_white_24dp.svg" alt="edit"></a>
                                                         <a title="Eliminar Registro" class="delete" href="registro-admin.php?id=<?php echo $id_computadora?>"><img class="crud-action" src="../icons/delete_white_24dp.svg" alt="delete"></a>                            </td>
@@ -212,6 +219,13 @@
                                                     <td><?php echo $condicion?></td>
                                                     <td><?php echo $estado?></td>
                                                     <td>
+                                                    <?php
+                                                        if($estado=="Reservado"){
+                                                            ?>
+                                                            <a title="Retirar" class="retiro" href="../php/registro-admin.php?id2=<?php echo $id_computadora?>"><img class="crud-action" src="../icons/check_circle_white_24dp.svg" alt="retirar-disp-icon"></a>
+                                                            <?php
+                                                        }
+                                                    ?>
                                                         <a title="Ver Detalles" class="perfil" href="../php/cruds/perfil-computadora.php?id=<?php echo $id_computadora?>"><img class="crud-action" src="../icons/info_white_24dp.svg" alt="perfil-pc"></a>
                                                         <a title="Editar Registro" class="edit" href="../php/cruds/edit-disp.php?id=<?php echo $id_computadora?>"><img class="crud-action" src="../icons/edit_white_24dp.svg" alt="edit"></a>
                                                         <a title="Eliminar Registro" class="delete" href="registro-admin.php?id=<?php echo $id_computadora?>"><img class="crud-action" src="../icons/delete_white_24dp.svg" alt="delete"></a>                            </td>
@@ -300,6 +314,13 @@
                                                     <td><?php echo $condicion?></td>
                                                     <td><?php echo $estado?></td>
                                                     <td>
+                                                    <?php
+                                                        if($estado=="Reservado"){
+                                                            ?>
+                                                            <a title="Retirar" class="retiro" href="../php/registro-admin.php?id2=<?php echo $id_computadora?>"><img class="crud-action" src="../icons/check_circle_white_24dp.svg" alt="retirar-disp-icon"></a>
+                                                            <?php
+                                                        }
+                                                    ?>
                                                         <a title="Ver Detalles" class="perfil" href="../php/cruds/perfil-computadora.php?id=<?php echo $id_computadora?>"><img class="crud-action" src="../icons/info_white_24dp.svg" alt="perfil-pc"></a>
                                                         <a title="Editar Registro" class="edit" href="../php/cruds/edit-disp.php?id=<?php echo $id_computadora?>"><img class="crud-action" src="../icons/edit_white_24dp.svg" alt="edit"></a>
                                                         <a title="Eliminar Registro" class="delete" href="registro-admin.php?id=<?php echo $id_computadora?>"><img class="crud-action" src="../icons/delete_white_24dp.svg" alt="delete"></a>                            </td>

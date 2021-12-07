@@ -56,7 +56,7 @@
                             $valid_observaciones=$observaciones;
                             include('../php/coneccion.php');
                             $cambio_estado=@mysqli_query($coneccion, "UPDATE `computadoras` SET id_estado_f=1 WHERE id_computadora='$idComputadora'");
-                            $get_fecha_retiro=@mysqli_query($coneccion, "SELECT DISTINCT retiros_pc.fecha_hora_retiro FROM `retiros_pc` WHERE retiros_pc.id_computadora_f='$idComputadora' AND retiros_pc.id_usuario_f='$idUsuario'");
+                            $get_fecha_retiro=@mysqli_query($coneccion, "SELECT DISTINCT retiros_pc.fecha_hora_retiro FROM `retiros_pc` WHERE (retiros_pc.id_computadora_f='$idComputadora' AND retiros_pc.id_usuario_f='$idUsuario') AND retiros_pc.fecha_hora_devolucion='0000-00-00 00:00:00'");
                             if($row=mysqli_fetch_array($get_fecha_retiro)){
                                 $fecha_retiro=$row['fecha_hora_retiro'];
                             }
